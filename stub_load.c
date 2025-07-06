@@ -467,7 +467,7 @@ void flash_set_buf_rdy()
 	if(tail != flash_prog.ctrl_head) { // buffer is not full
 		idx = flash_prog.data_ctrl[flash_prog.ctrl_tail].buf_idx;
 		flash_prog.ctrl_tail = tail;
-		flash_prog.data_ctrl[tail].buf_idx = (idx + 1) % (LOAD_BLK_NUM - 1); //update next buf_idx
+		flash_prog.data_ctrl[tail].buf_idx = (idx + 1) % LOAD_BLK_NUM; //update next buf_idx
 	}
 }
 
